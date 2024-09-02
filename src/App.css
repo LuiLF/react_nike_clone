@@ -1,0 +1,183 @@
+/* 
+  Importa a fonte "Poppins" do Google Fonts com várias opções de peso e itálico.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* 
+  Define variáveis de cor para uso em todo o documento.
+*/
+:root {
+  --red: #d01c28; /* Cor vermelha principal */
+  --gray: #2e2e2e; /* Cor cinza usada para textos e barras */
+}
+
+/* 
+  Define a fonte padrão para o corpo da página.
+*/
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* 
+  Estiliza o botão com um design personalizado, removendo estilos padrão e adicionando efeitos.
+*/
+button {
+  all: unset; /* Remove estilos padrão do botão */
+  padding: 6px 36px; /* Define o espaçamento interno do botão */
+  background: var(--red); /* Define a cor de fundo do botão */
+  height: 32px; /* Define a altura do botão */
+  color: white; /* Define a cor do texto do botão */
+  font-weight: 500; /* Define o peso da fonte do botão */
+  cursor: pointer; /* Define o cursor como ponteiro para indicar que é clicável */
+  transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para a transformação */
+}
+
+button:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+/* 
+  Centraliza o conteúdo dentro do container e define a largura máxima.
+*/
+.container {
+  margin: 0 auto; /* Centraliza horizontalmente o container */
+  max-width: 1280px; /* Define a largura máxima do container */
+}
+
+/* 
+  Estiliza o elemento de navegação com flexbox.
+*/
+nav {
+  display: flex; /* Usa flexbox para layout */
+  justify-content: space-between; /* Distribui os itens igualmente com espaço entre eles */
+  height: 72px; /* Define a altura da barra de navegação */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+/* 
+  Estiliza a lista de navegação, removendo os marcadores e ajustando o espaçamento.
+*/
+nav ul {
+  display: flex; /* Usa flexbox para layout */
+  list-style: none; /* Remove os marcadores da lista */
+  gap: 24px; /* Define o espaço entre os itens da lista */
+}
+
+/* 
+  Estiliza os itens da lista de navegação.
+*/
+nav li {
+  cursor: pointer; /* Define o cursor como ponteiro para itens clicáveis */
+  position: relative; /* Necessário para posicionar o pseudo-elemento ::after */
+  background: none; /* Remove o fundo padrão */
+  border: none; /* Remove a borda padrão */
+  font-weight: 500; /* Define o peso da fonte dos itens da lista */
+  letter-spacing: 0.5px; /* Define o espaçamento entre letras */
+  margin-right: 20px; /* Adiciona margem direita para espaçamento */
+  padding: 0; /* Remove o padding padrão */
+  overflow: hidden; /* Garante que o pseudo-elemento não ultrapasse os limites do li */
+}
+
+/* 
+  Adiciona uma barra animada abaixo dos itens da lista de navegação.
+*/
+nav li::after {
+  content: ""; /* Cria um pseudo-elemento vazio */
+  position: absolute; /* Posiciona o pseudo-elemento absolutamente */
+  left: 0; /* Alinha a barra à esquerda do item */
+  bottom: 0; /* Alinha a barra à parte inferior do item */
+  width: 0; /* Largura inicial da barra (invisível) */
+  height: 2px; /* Altura da barra */
+  background-color: var(--gray); /* Cor da barra */
+  transition: width 0.3s ease-in-out; /* Transição suave para a largura da barra */
+}
+
+nav li:hover::after {
+  width: 100%; /* Aumenta a largura da barra para 100% do item ao passar o mouse */
+}
+
+/* 
+  Estiliza as imagens dentro da navegação para terem o cursor de ponteiro.
+*/
+nav img {
+  cursor: pointer; /* Define o cursor como ponteiro para imagens clicáveis */
+}
+
+/* 
+  Estiliza a seção hero com flexbox para centralizar o conteúdo verticalmente.
+*/
+.hero {
+  display: flex; /* Usa flexbox para layout */
+  align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+  height: calc(
+    100vh - 72px
+  ); /* Define a altura como a altura da viewport menos a altura da navegação */
+}
+
+/* 
+  Estiliza o conteúdo da seção hero.
+*/
+.hero-content {
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Alinha os itens em coluna */
+  gap: 36px; /* Espaçamento entre os itens */
+}
+
+/* 
+  Estiliza o título da seção hero.
+*/
+.hero h1 {
+  font-weight: 800; /* Define o peso da fonte do título */
+  line-height: 102px; /* Define a altura da linha do título */
+  font-size: 108px; /* Define o tamanho da fonte do título */
+}
+
+/* 
+  Estiliza o parágrafo da seção hero.
+*/
+.hero p {
+  font-weight: 600; /* Define o peso da fonte do parágrafo */
+  color: var(--gray); /* Define a cor do texto */
+  max-width: 400px; /* Define a largura máxima do parágrafo */
+}
+
+/* 
+  Estiliza os botões na seção hero com espaçamento e tamanho da fonte.
+*/
+.hero-btn {
+  display: flex; /* Usa flexbox para layout */
+  gap: 40px; /* Espaçamento entre os botões */
+}
+
+.hero-btn button {
+  font-size: 24px; /* Define o tamanho da fonte dos botões */
+}
+
+/* 
+  Estiliza o botão secundário com um fundo transparente e uma borda cinza.
+*/
+.secondary-btn {
+  background: transparent; /* Define o fundo como transparente */
+  color: var(--gray); /* Define a cor do texto */
+  border: 1px solid gray; /* Adiciona uma borda cinza */
+}
+
+/* 
+  Estiliza o parágrafo na seção de compras.
+*/
+.shopping p {
+  font-size: 14px; /* Define o tamanho da fonte do parágrafo */
+  margin-bottom: 8px; /* Adiciona margem inferior */
+}
+
+/* 
+  Estiliza os ícones de marca com flexbox e adiciona cursor de ponteiro ao passar o mouse.
+*/
+.brand-icons {
+  display: flex; /* Usa flexbox para layout */
+  gap: 16px; /* Espaçamento entre os ícones */
+}
+
+.brand-icons:hover {
+  cursor: pointer; /* Define o cursor como ponteiro para ícones clicáveis */
+}

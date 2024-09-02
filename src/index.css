@@ -1,0 +1,8 @@
+/* 
+  CSS Global Reset: Remove as margens padrão de todos os elementos da página.
+  Isso ajuda a garantir que o layout comece com uma margem consistente de zero.
+*/
+
+* {
+  margin: 0; /* Remove as margens padrão dos elementos */
+}
